@@ -1,0 +1,18 @@
+{
+  "name": "uq-password-reset",
+  "version": "0.0.0",
+  "description": "Resources for the UQ password reset page",
+  "devDependencies": {
+    "es6-map": "^0.1.5",
+    "es6-promise": "^4.2.8",
+    "font-awesome": "4.7.0",
+    "foundation-sites": "5.5.3",
+    "html5shiv": "3.7.3",
+    "joi-browser": "^13.4.0",
+    "respond.js": "1.4.2",
+    "underscore": "^1.9.1",
+    "uq_standard": "git+ssh://git@git.its.uq.edu.au/uq-drupal/uq_standard.git",
+    "zxcvbn": "^4.4.2"
+  },
+  "author": "University of Queensland"
+}

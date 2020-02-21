@@ -1,0 +1,67 @@
+/* Overrides of UQ Standard */
+
+html, body {
+  background-color: #51247A;
+}
+
+.show-on-focus:focus, .show-on-focus:active {
+  color: #FFFFFF;
+}
+
+a {
+  // to comply with WCAG2.0
+  text-decoration: underline;
+}
+
+// Correct the grid behaviour
+.row {
+  @include grid-row(nest);
+}
+
+.description {
+  font-style: normal;
+}
+
+.site-header {
+  &__content {
+    padding: 1.5rem 0 1.5rem 0;
+  }
+  .site-title {
+    color: #FFFFFF;
+  }
+}
+
+.site-footer {
+  .row {
+    @include grid-row(collapse);
+  }
+}
+
+
+/* Colors */
+$color--light-grey : #ddd;
+
+/* Elements */
+.section__notice {
+  max-width: 800px; 
+  margin: 0px 0 0px;
+  padding: 30px 30px;
+  border: 1px solid $color--light-grey;
+
+  &:not(:nth-child(1)) {
+    margin: 30px 0 0px;
+  }
+
+  .button {
+    margin: 1.25rem 0 0;
+  }
+}
+
+.text-placeholder {
+  color: red;
+}
+
+/* Override */
+.site-header__content {
+  padding: 1.5rem 0;
+}

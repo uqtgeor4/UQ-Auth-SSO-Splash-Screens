@@ -1,0 +1,328 @@
+fieldset legend {
+  font-size: .875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+label {
+  margin-bottom: 1rem;
+  white-space: normal;
+
+  + input[type="text"], 
+  + input[type="password"], 
+  + input[type="date"],
+  + input[type="datetime"], 
+  + input[type="datetime-local"], 
+  + input[type="month"], 
+  + input[type="week"], 
+  + input[type="email"], 
+  + input[type="number"], 
+  + input[type="search"], 
+  + input[type="tel"],
+  + input[type="time"],
+  + input[type="url"], 
+  + input[type="color"], 
+  + textarea,
+  + select {
+    margin-top: -(rem-calc(12px));
+  }
+
+  > input[type="text"], 
+  > input[type="password"], 
+  > input[type="date"],
+  > input[type="datetime"], 
+  > input[type="datetime-local"], 
+  > input[type="month"], 
+  > input[type="week"], 
+  > input[type="email"], 
+  > input[type="number"], 
+  > input[type="search"], 
+  > input[type="tel"],
+  > input[type="time"],
+  > input[type="url"], 
+  > input[type="color"], 
+  > textarea,
+  > select {
+    margin-bottom: 0;
+    margin-top: rem-calc(4px);
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  float: left;
+  clear: left;
+  margin-bottom: 0;
+  margin-right: rem-calc(6px);
+  
+  + label {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-top: rem-calc(3px);
+}
+
+input:not([type])[disabled], 
+input:not([type])[readonly], 
+fieldset[disabled] input:not([type]), 
+input[type="text"][disabled], 
+input[type="text"][readonly], 
+fieldset[disabled] input[type="text"], 
+input[type="password"][disabled], 
+input[type="password"][readonly], 
+fieldset[disabled] input[type="password"], 
+input[type="date"][disabled], 
+input[type="date"][readonly], 
+fieldset[disabled] input[type="date"], 
+input[type="datetime"][disabled], 
+input[type="datetime"][readonly], 
+fieldset[disabled] input[type="datetime"], 
+input[type="datetime-local"][disabled], 
+input[type="datetime-local"][readonly], 
+fieldset[disabled] input[type="datetime-local"], 
+input[type="month"][disabled], 
+input[type="month"][readonly], 
+fieldset[disabled] input[type="month"], 
+input[type="week"][disabled], 
+input[type="week"][readonly], 
+fieldset[disabled] input[type="week"], 
+input[type="email"][disabled], 
+input[type="email"][readonly], 
+fieldset[disabled] input[type="email"], 
+input[type="number"][disabled], 
+input[type="number"][readonly], 
+fieldset[disabled] input[type="number"], 
+input[type="search"][disabled], 
+input[type="search"][readonly], 
+fieldset[disabled] input[type="search"], 
+input[type="tel"][disabled], 
+input[type="tel"][readonly], 
+fieldset[disabled] input[type="tel"], 
+input[type="time"][disabled], 
+input[type="time"][readonly], 
+fieldset[disabled] input[type="time"], 
+input[type="url"][disabled], 
+input[type="url"][readonly], 
+fieldset[disabled] input[type="url"], 
+input[type="color"][disabled], 
+input[type="color"][readonly], 
+fieldset[disabled] input[type="color"], 
+textarea[disabled], textarea[readonly], 
+fieldset[disabled] textarea,
+input[type="submit"][disabled],
+input[type="submit"][readonly],
+input[type="button"][disabled],
+input[type="button"][readonly],
+button[disabled],
+button[readonly],
+input[type="reset"][disabled],
+input[type="reset"][readonly] {
+  cursor: not-allowed;
+}
+
+/** 
+ * Accessible hiding of content
+ * https://www.sitepoint.com/when-and-how-to-visually-hide-content/
+ */
+ .access-aid {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important; 
+  width: 1px !important; 
+  overflow: hidden;
+}
+
+.form {
+  &__required {
+    color: $alert;
+  }
+  &__description {
+    color: $form-description-color;
+    font-size: .875rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  &__help-text {
+    color: $form-description-color;
+    font-size: .875rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  &__inline-error-message {
+    background-color: $alert;
+    color: white;
+    display: block;
+    font-size: rem-calc(14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.357;
+    margin-bottom: 1rem;
+    padding: 7px 8px 8px 8px;
+  }
+}
+
+legend {
+  &.form__legend {
+    &.form__legend--error {
+      color: $alert;
+    }
+  }
+}
+
+label {
+  &.form__label {
+    &.form__label--disabled {
+      color: #ccc;
+      cursor: not-allowed;
+    }
+    &.form__label--error {
+      color: $alert;
+      position: relative;
+
+      > input[type="text"], 
+      > input[type="password"], 
+      > input[type="date"],
+      > input[type="datetime"], 
+      > input[type="datetime-local"], 
+      > input[type="month"], 
+      > input[type="week"], 
+      > input[type="email"], 
+      > input[type="number"], 
+      > input[type="search"], 
+      > input[type="tel"],
+      > input[type="time"],
+      > input[type="url"], 
+      > input[type="color"], 
+      > textarea,
+      > select {
+        &.form__input {
+          &.form__input--error {
+            + .form__inline-error-message {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+
+      > input[type="checkbox"],
+      > input[type="radio"] {
+        &.form__input {
+          &.form__input--error {
+            &:before {
+              background-color: $alert;
+              bottom: -4px;
+              content: "";
+              display: inline-block;
+              left: 0;
+              position: absolute;
+              top: -4px;
+              width: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+input[type="text"], 
+input[type="password"], 
+input[type="date"],
+input[type="datetime"], 
+input[type="datetime-local"], 
+input[type="month"], 
+input[type="week"], 
+input[type="email"], 
+input[type="number"], 
+input[type="search"], 
+input[type="tel"],
+input[type="time"],
+input[type="url"], 
+input[type="color"], 
+textarea, 
+select {
+  &.form__input {
+    &.form__input--error {
+      border-color: $alert;
+
+      &:focus {
+        border-color: $alert;
+      }
+    }
+
+    + .form__inline-error-message {
+      margin-top: -1rem;
+    }
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  &.form__input {
+    &.form__input--error {
+      margin-left: 10px;
+    }
+  }
+
+  + label {
+    &.form__label {
+      &.form__label--error {
+        &:before {
+          background-color: $alert;
+          bottom: -4px;
+          content: "";
+          display: inline-block;
+          left: 0;
+          position: absolute;
+          top: -4px;
+          width: 3px;
+        }
+      }
+    }
+  }
+}
+
+.error-summary {
+  background-color: desaturate(lighten($alert, 62.5%), 25%);
+  border: 1px solid $alert;
+  border-left-width: 3px;
+  padding: $column-gutter / 2;
+  margin-bottom: 1.5rem;
+  &__title {
+    color: $body-font-color;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: .875rem;
+  }
+  &_body {
+    color: $body-font-color;
+    font-size: .875rem;
+  }
+  &__list {
+    color: $body-font-color;
+    font-size: .875rem;
+    margin: 0;
+    &-item {
+      margin-bottom: .4rem;
+    }
+    a {
+      color: $alert;
+      text-decoration: underline;
+      font-weight: 400;
+      &:hover, &:focus {
+        color: darken($alert, 5%);
+      }
+    }
+  }
+}

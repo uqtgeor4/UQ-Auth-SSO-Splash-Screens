@@ -1,0 +1,88 @@
+/*
+Accessible toggle switch using radio buttons.
+
+This option may be required over a checkbox-based toggle switch when non-boolean
+values are required.
+See: https://medium.com/paypal-engineering/a-sweet-toggle-switch-93a73dafbaf1
+*/
+
+$toggle-switch--radio-height: 36px;
+$toggle-switch--radio-bg-color: #2b2b2b;
+$toggle-switch--radio-border-width: 2px;
+$toggle-switch--radio-border-font-size: rem-calc(12px);
+$toggle-switch--radio-width: 9.6rem;
+
+.toggle-switch--radio {
+  background-color: lighten($toggle-switch--radio-bg-color, 7%);
+  border-radius: $toggle-switch--radio-height / 2;
+  display: inline-block;
+  height: $toggle-switch--radio-height;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  label {
+    border-radius: $toggle-switch--radio-height / 2;
+    border: $toggle-switch--radio-border-width solid lighten($toggle-switch--radio-bg-color, 7%);
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-size: $toggle-switch--radio-border-font-size;
+    height: $toggle-switch--radio-height;
+    line-height: $toggle-switch--radio-height - ($toggle-switch--radio-border-width * 2);
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: $toggle-switch--radio-width;
+    &:hover, &:focus {
+      background-color: #ccc;
+      color: #000;
+    }
+  }
+  input[type="radio"] {
+    margin: 0;
+    + label {
+      font-weight: 500;
+      margin: 0;
+      ~ label {
+        margin-left: -($toggle-switch--radio-border-width);
+      }
+    }
+    &:hover {
+      + label {
+        background-color: $toggle-switch--radio-bg-color;
+        color: #FFFFFF;
+      }
+    }
+    &:focus + label {
+      // fallback for browsers that do not support focus-within
+      border: $toggle-switch--radio-border-width solid #2377CB;
+      color: #FFFFFF;
+    }
+    &:checked + label {
+      background-color: #FFFFFF;
+      color: #2377CB;
+      &:before {
+        font-family: uq-icons, FontAwesome, $roboto;
+        font-size: rem-calc(14px);
+        line-height: $toggle-switch--radio-border-font-size;
+        margin-right: .3rem;
+        content: "";
+      }
+    }
+  }
+  &:focus-within {
+    // change the background for browsers that support focus-within
+    background-color: #2377CB;
+    label {
+      border-color: #2377CB;
+    }
+    input[type="radio"] {
+      &:hover + label {
+        background-color: #005EA5;
+      }
+      &:checked + label {
+        background-color: #FFFFFF;
+        color: #2377CB;
+      }
+    }
+  }
+}

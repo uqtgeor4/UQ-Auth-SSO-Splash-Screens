@@ -1,0 +1,27 @@
+/* Colors */
+$color--light-grey : #ddd;
+
+/* Elements */
+.section__notice {
+  max-width: 800px; 
+  margin: 0px 0 0px;
+  padding: 30px 30px;
+  border: 1px solid $color--light-grey;
+
+  &:not(:nth-child(1)) {
+    margin: 30px 0 0px;
+  }
+
+  .button {
+    margin: 1.25rem 0 0;
+  }
+}
+
+.text-placeholder {
+  color: red;
+}
+
+/* Override */
+.site-header__content {
+  padding: 1.5rem 0;
+}

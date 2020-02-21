@@ -1,0 +1,72 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ */
+
+// Import Sass mixins, variables, Compass modules, etc.
+@import 'init';
+
+// Base
+//
+// These are the base styles applied to HTML elements. A customized normalize
+// is added first, then base partials.
+// @import 'node_modules/uq_standard/scss/base/*.*';
+@import 'node_modules/uq_standard/scss/base/forms';
+@import 'node_modules/uq_standard/scss/base/horizontal-rule';
+@import 'node_modules/uq_standard/scss/base/links';
+@import 'node_modules/uq_standard/scss/base/logo';
+@import 'node_modules/uq_standard/scss/base/tables';
+@import 'node_modules/uq_standard/scss/base/text-alignment';
+@import 'node_modules/uq_standard/scss/base/typography';
+
+// Components
+//
+// Design components are reusable designs that can be applied using just the CSS
+// class names specified in the component.
+// @import 'components/**/*.*';
+@import 'node_modules/uq_standard/scss/components/buttons/buttons';
+@import 'node_modules/uq_standard/scss/components/progression/progression';
+@import 'node_modules/uq_standard/scss/components/sections/section';
+@import 'node_modules/uq_standard/scss/components/site-footer/site-footer';
+@import 'node_modules/uq_standard/scss/components/site-header/site-header';
+
+// Layouts
+//
+// The layout styling for major parts of the page that are included with the
+// theme.
+// Note: some Panels layouts are included in other parts of the system
+// and are not documented.
+// @import 'layouts/**/*.*';
+
+// Templates
+//
+// Templates are mashups of different components as they would be used around
+// the website.
+// @import 'templates/*.*';
+
+// Contrib
+// Component styles for non-UQ components, such as: Drupal contrib modules, or
+// integrated 3rd party apps;
+// @import 'contrib/**/*.*';
+@import 'node_modules/uq_standard/scss/contrib/drupal/messages';
+@import 'node_modules/uq_standard/scss/contrib/drupal/visibility';
+
+
+// *********************************************
+// Custom styles for the UQ password reset pages
+// *********************************************
+
+.page {
+  background: #FFFFFF;
+}
+
+@import 'global/colours';
+
+@import 'base/forms';
+
+// @import 'components/toggle-switch';
+@import 'components/toggle-switch--radio';
+@import 'components/password-strength-meter';
+
+// catch-all overrides
+@import 'overrides';
