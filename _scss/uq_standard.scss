@@ -25,7 +25,6 @@
 // class names specified in the component.
 // @import 'components/**/*.*';
 @import 'node_modules/uq_standard/scss/components/buttons/buttons';
-@import 'node_modules/uq_standard/scss/components/progression/progression';
 @import 'node_modules/uq_standard/scss/components/sections/section';
 @import 'node_modules/uq_standard/scss/components/site-footer/site-footer';
 @import 'node_modules/uq_standard/scss/components/site-header/site-header';
@@ -48,8 +47,6 @@
 // Component styles for non-UQ components, such as: Drupal contrib modules, or
 // integrated 3rd party apps;
 // @import 'contrib/**/*.*';
-@import 'node_modules/uq_standard/scss/contrib/drupal/messages';
-@import 'node_modules/uq_standard/scss/contrib/drupal/visibility';
 
 
 // *********************************************
@@ -59,14 +56,6 @@
 .page {
   background: #FFFFFF;
 }
-
-@import 'global/colours';
-
-@import 'base/forms';
-
-// @import 'components/toggle-switch';
-@import 'components/toggle-switch--radio';
-@import 'components/password-strength-meter';
 
 // catch-all overrides
 @import 'overrides';
